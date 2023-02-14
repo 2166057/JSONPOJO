@@ -16,12 +16,16 @@ public abstract class JSONPOJO<K> {
     final Class<K> typeParameterClass;
 
     //Constructor where you specify the class your working and allow use annotations only.
-    public JSONPOJO(Class<K> typeParameterClass) {
-        gson = new GsonBuilder()
-                .excludeFieldsWithoutExposeAnnotation()
-                .create();
+    public JSONPOJO(Class<K> typeParameterClass,Boolean exposedOnly) {
+        if (exposedOnly){
+            gson = new GsonBuilder().excludeFieldsWithoutExposeAnnotation().create();
+        }else {
+            gson = new GsonBuilder().create();
+        }
         this.typeParameterClass = typeParameterClass;
     }
+
+    
     protected K fromJSON(String json){
         return gson.fromJson(json, typeParameterClass);
     }
