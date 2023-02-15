@@ -1,13 +1,7 @@
 package me.premium.jsonpojo;
 
-import com.google.gson.JsonDeserializationContext;
-import com.google.gson.JsonElement;
-import com.google.gson.JsonParseException;
-import com.google.gson.JsonSerializationContext;
 import com.google.gson.annotations.Expose;
 import me.premium.jsonpojo.api.JSONPOJO;
-
-import java.lang.reflect.Type;
 
 public class Foo extends JSONPOJO<Foo> {
     public Foo(Boolean exposed) {
@@ -16,7 +10,7 @@ public class Foo extends JSONPOJO<Foo> {
 
     @Expose
     public String exposedString = "exposed String is visible";
-    public String regularString = "regular String is visible";
+    private String regularString = "regular String is visible";
 
 
 //    public void exemple(){

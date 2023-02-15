@@ -24,7 +24,7 @@ public abstract class JSONPOJO<K> implements JsonSerializer<K>, JsonDeserializer
         if (exposedOnly){
             gson = new GsonBuilder().excludeFieldsWithoutExposeAnnotation().create();
         }else {
-            gson = new GsonBuilder().registerTypeAdapter(typeParameterClass,this).excludeFieldsWithModifiers(Modifier.PRIVATE).create();
+            gson = new GsonBuilder().registerTypeAdapter(typeParameterClass,this).create();
         }
         this.typeParameterClass = typeParameterClass;
     }
