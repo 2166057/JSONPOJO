@@ -47,7 +47,7 @@ Soon...
 
 ## Usage
 
-###Creating a parsable class
+Create a parsable class
 
 ```java
 public class Foo extends JSONPOJO<Foo> {
@@ -57,13 +57,13 @@ public class Foo extends JSONPOJO<Foo> {
 }
 ```
 
-###Convert POJO to JSON
+Convert POJO to JSON
 
 ```java
 new Foo().toJsonString();
 ```
 
-###Convert JSON to POJO
+Convert JSON to POJO
 
 ```java
 //this is just a JSON String
