@@ -1,8 +1,8 @@
-package me.premium.jsonpojo.api;
+package net.wattpadpremium.jsonpojo.api;
 
 import com.google.gson.*;
 
-public abstract class JsonPojoImplementer<K>{
+public abstract class PojoAdapter<K>{
 
     //Don't Touch
     private Gson gson;
@@ -16,7 +16,7 @@ public abstract class JsonPojoImplementer<K>{
     final Class<K> typeParameterClass;
 
     //Constructor where you specify the class your working and allow use annotations only.
-    public JsonPojoImplementer(Class<K> typeParameterClass) {
+    public PojoAdapter(Class<K> typeParameterClass) {
         gson = new GsonBuilder().excludeFieldsWithoutExposeAnnotation().create();
         this.typeParameterClass = typeParameterClass;
     }
@@ -28,6 +28,11 @@ public abstract class JsonPojoImplementer<K>{
 
     public String toJsonString(){
         return gson.toJson(this, typeParameterClass);
+    }
+
+    @Override
+    public String toString(){
+        return toJsonString();
     }
 
 }

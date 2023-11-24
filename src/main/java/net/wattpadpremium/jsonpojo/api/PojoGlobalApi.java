@@ -1,4 +1,4 @@
-package me.premium.jsonpojo.api;
+package net.wattpadpremium.jsonpojo.api;
 
 
 import com.google.gson.Gson;
@@ -6,7 +6,7 @@ import com.google.gson.JsonObject;
 
 import java.lang.reflect.Field;
 
-public class GlobalPJ {
+public class PojoGlobalApi {
 
     public static String convertToJsonString(Class<?> clazz, Object object) {
         // Use Gson library to convert object to JSON string

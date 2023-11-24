@@ -1,8 +1,8 @@
-package me.premium.jsonpojo;
+package net.wattpadpremium.jsonpojo.demo;
 
 import com.google.gson.annotations.Expose;
-import me.premium.jsonpojo.api.PojoGlobalApi;
-import me.premium.jsonpojo.api.PojoAdapter;
+import net.wattpadpremium.jsonpojo.api.PojoAdapter;
+
 
 public class Main {
 
@@ -30,14 +30,5 @@ public class Main {
         @Expose
         public String exposedString = "exposed String is visible";
         private String regularString = "regular String is visible";
-
-
-//    public void exemple(){
-//        //this is just a JSON String
-//        String foojson = new Foo().toJsonString();
-//
-//        //now parsing the JSON String back into a new Object.
-//        Foo foo = new Foo().fromJSON(foojson);
-//    }
     }
 }
